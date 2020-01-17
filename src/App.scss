@@ -1,0 +1,280 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin-top: 0;
+    margin-bottom: .5rem;
+	color: #3A4652;
+}
+h4 {
+	font-size: 1.1rem;
+}
+p {
+	margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+.card {
+	background-color: rgba(0, 0, 0, 0.03);
+    background-clip: border-box;
+    border: 1px solid rgba(0,0,0, 0.05);
+    border-radius: .105rem .25rem .25rem .105rem;
+	width: 80%;
+	margin: 5px;
+	border-left: 5px solid #3A4652;
+	&:hover {
+		cursor: pointer;
+	}
+	&.active {
+		border: 1px solid rgba(0,0,0,.250);
+		border-left: 5px solid #3A4652;
+		background-color: rgba(0, 0, 0, 0.06);
+		box-shadow: 0 1px 7px 0 rgba(0, 0, 0, 0.46);
+		.add-scorepoints {
+			display: block;
+			.add-scorepoints-block {
+				display: block;	
+							
+			}
+			.show {
+				display: block;
+			}
+			.hide {
+				display: none;
+			}	
+		}	
+	}
+	.add-scorepoints {
+		display: none;
+		position: absolute;
+		top: 3em;
+		right: 3em;
+		width: 125px;
+		.add-scorepoints-block {
+			.input-container {
+				margin-right: -1px;
+				input {
+					width: 41%;
+					float: right;
+				}
+			}
+			.buttons-container {
+				text-align: right;
+				clear: both;
+			}	
+		}
+	}
+	.card-body {
+		padding: 1em;
+		position: relative;
+		
+		.card-subtitle {
+			margin-top: .2em;
+			margin-bottom: .1em;
+			color: #999;
+		}
+		.score-points {
+			position: absolute;
+			top: 1em;
+			right: 3em;
+		}
+	}
+}
+.container {
+	position: relative;
+	padding: 1em;
+}
+
+.submit-form {
+	padding: 2em;
+	background-color: #8C8C8C;
+	label {
+		margin-right: 1.5em;
+		input {
+			border: 1px solid #cccccc;
+			border-radius: 3px;
+			padding: 0.2em;
+			margin-left: 0.5em;
+		}		
+	}	
+}
+
+button {
+	background-color: #d9d8de;
+	border: 1px solid #c7c7c8;
+	padding: 0.29em 12px;
+	color: #333333;
+	height: 32px;
+	border-radius: 5px;
+	cursor: pointer;
+	outline: none;
+	&.sort-button {			
+		position: fixed;
+		top: 4em;
+		right: 7%;				
+		&:hover {
+			cursor: pointer;
+			background-color: #c7c7c8;
+			border: 1px solid #c7c7c8;
+			color: #333333;
+		}
+	}
+	&.add-score-button {
+		padding: 0.2em 2em 0.2em 0.5em;
+		height: 27px;
+		border-radius: 3px;
+		cursor: pointer;
+		font-size: 75%;
+		position: relative;
+		&:hover {
+			background-color: #c7c7c8;
+		}
+		svg {
+			position: absolute;
+			right: 0.4em;
+			top: 0.4em;
+			width: 1.2em;
+			height: 1.2em;
+		}
+	}
+	&.confirm-button, &.decline-button {
+		
+		margin: 5px 0 5px 5px;
+		height: 25px;
+		padding: 0.3px 0.3em;
+		border-radius: 3px;
+		svg {
+			width: 1.1em;
+			height: 1.1em;
+			margin: 0;
+		}
+	}
+	&.confirm-button {			
+		color: #117133;
+		&:hover {
+			color: #24B557;
+		}
+	}
+	&.decline-button {			
+		color: #B91A3B;
+		&:hover {
+			color: #FC5777;
+		}
+	}
+	&.addplayer-button {		
+		height: 28px;	
+		&:hover {
+			cursor: pointer;
+			background-color: #c7c7c8;
+			border: 1px solid #c7c7c8;
+			color: #333333;
+		}
+	}
+	
+	svg {
+		margin-left: 0.4em;
+	}
+}
+
+@media (max-width: 560px) {
+	.container {
+		position: relative;
+		padding: 0;
+	}
+	.card {
+		margin: 0;
+		border-radius: 0;
+		border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+		border-left: 7px solid #3A4652;
+		&.active {
+			border-left: 7px solid #3A4652;
+		}
+		.add-scorepoints {
+			width: auto;
+			.add-scorepoints-block {				
+				.input-container {
+					input {
+						width: 30%;
+					}
+				}
+			}
+		}
+	}
+	.submit-form {
+		position: relative;
+		padding: 1em;
+		label {
+			display: block;
+			background-color: #8C8C8C;
+			padding-right: 40%;
+			min-height: 2em;
+			margin: 10px 0;
+			input { 
+				float: right;
+				height: 1.8em;
+			}
+		}
+	}
+
+	button {
+		&.sort-button {
+			right: 1%;
+			width: 17%;
+			height: fit-content;
+		}
+		&.add-score-button {
+			span {
+				display: none;
+			}
+			svg {
+				position: absolute;
+			    right: 0.6em;
+			    top: 0.4em;
+			    width: 1.3em;
+			    height: 1.3em;
+			}
+		}
+		&.addplayer-button {
+			height: 38px;
+			position: absolute;
+			right: 4em;
+			top: 2em;
+		}
+	}
+}
